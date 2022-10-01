@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bull": "^4.8.5",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
