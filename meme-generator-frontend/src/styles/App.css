@@ -1,0 +1,29 @@
+.app {
+  text-align: center;
+  background: #3a3a3a;
+  color: white;
+  height: 100vh;
+  margin: 0;
+}
+
+.app__memeSelector{
+  display: flex;
+  /* max-width: 500px; */
+  background-color: rgba(60, 61, 61, 0.0);
+  justify-content: center;
+}
+
+.app__memeSelector__button{
+  margin: 50px;
+  border: solid 1px aliceblue;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.app__memeSelector__button:hover{
+  background-color: rgb(228, 228, 228);
+  color: #030303;
+  transition: 500ms;
+}
