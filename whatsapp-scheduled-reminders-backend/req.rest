@@ -1,0 +1,12 @@
+POST http://localhost:49160/requests 
+Content-Type: application/json
+
+{
+    "text":"Hello Worlkkd",
+    "phone": "919748049721",
+    "seconds": 1000
+}
+
+###
+
+GET http://localhost:49160
