@@ -7,15 +7,16 @@ NFT stands for non-fungible token. Non-fungible is an economic term that you cou
 <br>
 # steps to run this project
 <br>
+
 > Install <a href="https://nodejs.org/en/">Node JS</a>, <a href="https://metamask.io/">metamask</a> and <a href="https://trufflesuite.com/ganache/">ganache</a>
 
 > link and create new work space in ganache by uploading truffle.config file
 
 > after creation of workspace link your ganache with metamask wallet with the help of network ID and other server information
 
-> open repository in CMD type type <h5>npm install</h5> an then go to client folder again type <h5>npm install</h5>
+> open repository in CMD type type <npm install> an then go to client folder again type <npm install>
 
-> and then after installing packages type <h5>npm run</h5>
+> and then after installing packages type <npm run>
 
 > the contract written in solidity automatically connect metamask wallet to localhost server on which yoyr project is running and ask you to confirm transaction
 
