@@ -4,7 +4,7 @@
 
 ## What to contirbute?
 - Any projects you have done in the past for academic purposes
-- Include readme or project report
+- Include readme or project report explaning the project
 - Include the entire working code
 
 ## How to contribute? 
