@@ -1,0 +1,32 @@
+{
+  "name": "amazon_scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Aditya",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "consolidate": "^0.16.0",
+    "cron": "^1.8.2",
+    "csv-parse": "^4.12.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "fetch": "^1.1.0",
+    "mustache": "^4.0.1",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.5.0",
+    "path": "^0.12.7",
+    "puppeteer": "^8.0.0",
+    "request": "^2.88.2"
+  },
+  "engines": {
+    "node": "12.19.0"
+  }
+}

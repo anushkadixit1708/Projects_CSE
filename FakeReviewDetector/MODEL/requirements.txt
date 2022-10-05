@@ -1,0 +1,11 @@
+chalice
+matplotlib
+sklearn
+numpy
+scipy
+pandas
+Flask
+Flask-RESTful
+Flask-SQLAlchemy
+uwsgi
+nltk
