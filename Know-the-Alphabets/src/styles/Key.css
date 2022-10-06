@@ -1,0 +1,25 @@
+.Key {
+  height: 100%;
+  width: calc(8vh - 1vw);
+  padding: 0 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px 3px #fff;
+  border: 2px solid #fff;
+  background-color: #000;
+  border-radius: 10px;
+  transition: all linear 0.3s;
+  color: #fff;
+}
+
+.pressed {
+  border-color: #0f0;
+  box-shadow: 0 0 5px 5px #0f0;
+  transform: scale(1.2);
+  color: #0f0;
+}
+
+.RESET {
+  width: calc(6 * 8vh);
+}
