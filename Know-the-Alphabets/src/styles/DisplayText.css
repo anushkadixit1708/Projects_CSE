@@ -1,0 +1,15 @@
+.DisplayText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.DisplayText h1 {
+  font-size: 7.5em;
+  text-transform: uppercase;
+  font-family: "Trebuchet MS", sans-serif;
+  color: #edff00;
+  text-shadow: -6px -6px 3px #ff3ea5, 6px 6px 3px #00a4cc;
+}

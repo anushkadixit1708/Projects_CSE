@@ -1,0 +1,10 @@
+.DisplayImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+img {
+  height: 90%;
+}
