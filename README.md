@@ -16,4 +16,4 @@
 
 For non-code contributions, documentation related to projects is welcome. 
 Folders without a ReadMe or any kind of report should be targeted for the same. Ideal
-for contributors not from a conding background! 
+for contributors not from a coding background! 
