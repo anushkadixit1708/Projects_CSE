@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Face Mask Detector</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.svg" rel="icon">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="/">Face Mask Detector</a></h1>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#cta">Get Started</a></li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Face Mask Detector WebApp</span></h2>
+          <p class="animate__animated fanimate__adeInUp">Know if a person is wearing face mask or not</p>
+        
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Follow the covid norms</h2>
+          <p class="animate__animated animate__fadeInUp">Know how many people at a place are wearing mask and how many are without mask</p>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>About</h2>
+          <p>Face Mask Detector</p>
+          <br>
+        </div>
+
+        <div class="row content justify-content-center" data-aos="fade-up">
+          <div class="col-lg-10">
+            <p>
+                This project is made with an aim to enforce the mandate for wearing masks in public places following
+                Covid19 Norm and to make a working model for accurate mask detection
+                by image processing.
+                With this web app we want to track percentage of people not wearing face masks and area where less
+                mask is detected to restrictions in specific areas only
+
+            </p>
+            <P>
+              For now we can see the working model of our project where user can turn on their system's web camera and can detect number 
+              of faces wearing masks and no of faces not wearing masks.
+            </P>
+            <br> <br>
+            <a href="#cta" class="btn-learn-more">Get Started</a>
+          </div>
+        </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-out">
+          <div class="col-lg-9 text-center text-lg-left">
+            <h3>Use the Application</h3>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <button id="start" onclick="start()" class="cta-btn align-middle"><i class="fa fa-video-camera"
+                aria-hidden="true"></i> Start
+</button>
+            <button id="stop" onclick="stop()" class="cta-btn align-middle"><i class="fa fa-stop"
+                aria-hidden="true"></i> Stop
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+   
+    <section id="next">
+      <div class="container-fluid">
+        
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="section-title" data-aos="zoom-out">
+              <h1>Whats Next</h1>
+              <p></p>
+            </div>
+            <p class="next">
+              We are looking forward to integrate our ml model with cctv cameras which are installed at public places 
+              where in percentage of people not weraing mask in a particular area can be detected. We can also integrate it 
+              in cameras placed outside shops and malls which have automatic gate opeining entry wherein people without Mask
+              are not allowed to enter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Team</h2>
+          <p>Our Team</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 col-md-4 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/aditya-jain-479b96157/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Aditya Jain</h4>
+                <span>Full Stack Web Developer</span>
+                <h3>19BIT0050</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-4 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/aditya-jain-479b96157/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sayyam Maske</h4>
+                <span>Full Stack Web Developer</span>
+                <h3>19BIT0045</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-4 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/aditya-jain-479b96157/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Naman Jain</h4>
+                <span>ML</span>
+                <h3>19BIT0002</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-4 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/aditya-jain-479b96157/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Keshav Aggraval</h4>
+                <span>ML</span>
+                <h3>19BIT0009</h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Team Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Face Mask Detector</h3>
+      <p>Detecting face masks, keeping people safe</p>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/venobox/venobox.min.js"></script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="main.js"></script>
+
+  <script>
+    $(document).ready(function(){
+        $('#image-detector').attr('class', 'nav-item');
+        $('#live').attr('class', 'nav-item active');
+    })
+    
+        function stop(){
+            $("img").attr("src", "/static/images/stay-safe.jpg");
+            $("#stop").attr("class","cta-btn align-middle");
+    
+            $("#start").attr("class","cta-btn align-middle");
+        }
+        function start(){
+            $("img").attr("src", "{{url_for('main.video_feed')}}");
+            $("#start").attr("class","cta-btn align-middle");
+    
+            $("#stop").attr("class","cta-btn align-middle");
+        }
+    
+    </script>
+
+</body>
+
+</html>

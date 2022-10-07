@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-12">
+                <h1>Try the mask detector on custom images</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-fluid">
+            <div id="frame_container" class="row">
+                <div class="col-12">
+                    <img src="/static/images/mask.jpg" id="image-preview" style="max-width:600px"
+                         class="img-thumbnail img-fluid mx-auto d-block">
+                </div>
+            </div>
+            <div class="row mt-3 mb-5">
+                <div class="col-12 d-flex justify-content-center">
+    
+                    <form enctype="multipart/form-data" id="image-form" method="POST">
+                        <div class="row" id="form-row">
+                            <div class="col-12">
+                                {{ form.csrf_token() }}
+    
+                                {{ form.image.label(class="custom-file-label") }}
+                                {% if form.image.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.image.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                <div class="custom-file">
+                                    {{ form.image(class="custom-file-input",
+                                    id="new-image", onchange="previewImage(event)") }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+    
+                        <div class="row mt-3">
+                            <div class="col-12 d-flex justify-content-center">
+                                {{ form.submit(class="btn btn-primary", id ="submit", disabled=True)}}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <h4>What is this?</h4>
+            </div>
+            <div class="row">
+                <p>This is a mask detector, an algorithm based on deep neural networks that detects people in images and
+                    write a bounding box around faces, looking if they were masks or not. This is not for security
+                    purpose.</p>
+                <p>If you are interested in more details, check this post I wrote!</p>
+            </div>
+            <div class="row">
+                <h4>Who I am</h4>
+            </div>
+            <div class="row mb-5">
+                <p>I'm Galileo Parise, data scientist and matematician, and I've developed what you see during Italy's
+                    second lockdown in November, in which I had lots of free time. If you are interested in this and ohter
+                    stories,
+                    you can follow me on Linkedin and on Medium.
+                    Hoping to get soon over this situation,
+                    I hope you all good health:</p>
+                <p class="d-flex mx-auto lead text-danger"><strong>please, stay safe and wear a mask</strong>.</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    var previewImage = function(event) {
+        var element_id = "image-preview";
+        var preview = document.getElementById(element_id);
+        preview.src = URL.createObjectURL(event.target.files[0]);
+        preview.style.display = "block";
+        $("#submit").prop("disabled",false);
+    };
+    $(document).ready(function(){
+        $('#live').attr('class', 'nav-item');
+        $('#image-detector').attr('class', 'nav-item active');
+    })
+    $(function() {
+            $("#submit").each(function(index){
+                $(this).on('click', function(e) {
+    
+                    var url = "{{ url_for('main.image_processing') }}";
+    
+                    // Form data
+                    var formData = new FormData();
+    
+                    // Add form data
+                $('#image-form').serializeArray().forEach(
+                    function(item, index) {
+                        formData.append(item.name, item.value);
+                    }
+                );
+                    // Add the files
+                    var image = $('#new-image')[0].files[0];
+                    formData.append('image', image);
+    
+                    // AJAX query to the endpoint for deletion
+                    $.ajax({
+                        type: "POST", // POST HTTP
+                        url:  url +'',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+    
+                            $("#image-preview").attr("src", response);
+                            $("#submit").replaceWith('<button class="btn btn-success"><i class="fa fa-check-circle" onclick="location.reload()" aria-hidden="true"></i> Done!</button>');
+                            $("#form-row").remove();
+                        },
+                        error: function(response){
+                            location.reload();
+                            // Redirect to this page
+                        }
+                    });
+    
+                    return false;
+                })
+            })
+        })
+    </script>
+    
+    
+</body>
+</html>
+
+
+
