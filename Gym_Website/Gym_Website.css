@@ -1,0 +1,120 @@
+body{
+    color: white;
+    margin: 0;
+    padding: 0;
+    background: url('bg.png.jpg');
+    background-position-x: left;
+    font-family: 'Noto Sans',sans-serif;
+    
+
+}
+.header{
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+}
+.left{
+    
+    margin-left: 34px;
+    margin-top: 20px;
+    position: absolute  ;
+    left: 50px;
+
+}
+.mid{
+    /* border-color: yellow;
+    border-style: solid;
+    border-width: 3px;
+    margin-top: 20px; */
+
+}
+.midha{
+    display: flex;
+
+    list-style: none;
+    gap: 35px;
+    
+}
+.midha li{
+flex-shrink: 0;
+font-size: 20px;
+}
+li a{
+    text-decoration: none;
+    color: white;
+}
+li a:hover{
+    color: red;
+}
+
+.right{
+    
+    margin-left: 34px;
+    margin-top: 20px;
+    position: absolute;
+    right: 120px;
+
+}
+/* icon */
+.icon{
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+}
+
+/* buttons */
+.contacts{
+    text-decoration: none;
+    font-size: 15px;
+    padding: 12px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    
+}
+.contacts:hover{
+    color: gray;
+}
+
+
+/* form */
+.container{
+    border-color: white;
+    border-style: solid;
+    border-width: 3px;
+    position: absolute;
+    width: 33%;
+    text-align: center;
+    margin-top: 65px;
+    margin-left: 35px;
+   padding: 25px;
+   border-radius: 20px;
+}
+.text1{
+    font-size: 18px;
+    font-family: "Noto Sans", sans-serif    ;
+    font-weight: bold;
+}
+.form-group input[type="text"]{
+    font-family: "Noto Sans", sans-serif;
+    width: 70%;
+    padding: 7px;
+    margin: 11px auto;
+    border-radius: 8px;
+}
+.btn {
+    -webkit-border-radius: 28;
+    width: 70%;
+    -moz-border-radius: 28;
+    border-radius: 12px;
+    font-family: Georgia;
+    color: #fafafa;
+    font-size: 20px;
+    background: #111212;
+    padding: 7px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: black;
+    text-decoration: none;
+  }
