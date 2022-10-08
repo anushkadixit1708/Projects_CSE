@@ -1,0 +1,10 @@
+config package is installed to use global variables
+default.json file has all global variables and its value is available because of confog package
+
+BOdy-parser was used for middleware for passing data by req.body 
+but we dont need it now since it already comes with express
+
+npm run server 
+
+middleware: A function which has access to req and res cycle and 
+everytime we hit an end point we can fire if this function. 
