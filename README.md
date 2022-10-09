@@ -5,7 +5,9 @@
 ## What to contirbute?
 - Any projects you have done in the past for academic purposes
 - Include readme or project report explaning the project
-- Include the entire working code
+- Include the entire working code 
+- If you have any project ideas or would like help in certain things in a project, 
+feel free to contribute it to the repo
 
 ## How to contribute? 
 - Fork the reposirtory and add a folder of your project 
