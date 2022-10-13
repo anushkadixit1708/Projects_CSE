@@ -1,0 +1,44 @@
+
+   *{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+        }
+        .banner
+        {margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(animed.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .content{
+            width: 100%;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: white;
+        }
+   body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #evil-button {
+      position: absolute;
+      top: 50%;
+      left: 60%;
+      white-space: nowrap;
+      font-size: 2rem;
+    }
+  
+    #Y {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      white-space: nowrap;
+      font-size: 2rem;
+    }
