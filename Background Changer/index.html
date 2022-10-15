@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+
+        body{
+            background: hsl(33,100%,50%);
+        }
+        #btn{
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 50px;
+            font-size: 15px;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            width: 100px;
+            cursor: pointer;
+            box-shadow: none;
+            box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+            outline: none;
+        }
+        #btn:active{
+            box-shadow: inset 5px 5px 5px rgba(0,0,0,.5);
+            transform: translate(-48%,-48%);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn">Change</button>
+
+    <script>
+
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click",()=>{
+            document.body.style.background = randombg();
+            console.log(randombg);
+        });
+
+        function randombg(){
+            return `hsl(${Math.floor(Math.random()*360)},100%,50%)`;
+        }
+
+    </script>
+    
+</body>
+</html>
