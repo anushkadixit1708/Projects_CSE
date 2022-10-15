@@ -1,0 +1,10 @@
+opencv-contrib-python
+numpy
+face_recognition
+tensorflow
+matplotlib
+scipy
+Flask
+flask_cors
+cryptography
+python-dotenv
