@@ -1,9 +1,9 @@
-# Improving-the-CBIR-Process
+# Improving-the- Content Based Image Retrieval (CBIR) -Process
 An efficient framework for image retrieval using color, texture and edge features. Implementation of a research paper.
 
 Shows similar images based on input image.
 
-Improved CBIR process is implemented in #Matlab.
+Improved CBIR process is implemented in <b>Matlab</b>.
 
 ## Dataset
  
