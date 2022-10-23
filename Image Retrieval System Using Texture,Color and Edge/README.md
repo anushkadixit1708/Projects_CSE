@@ -3,7 +3,7 @@ An efficient framework for image retrieval using color, texture and edge feature
 
 Shows similar images based on input image.
 
-Improved CBIR process is implemented in Matlab.
+Improved CBIR process is implemented in #Matlab.
 
 ## Dataset
  
@@ -18,6 +18,11 @@ name the dataset folder as corel10k , corel5k , wang.
    2. Wait for 1-2 minute and you will get the related images to your search images.
 
 ## Output:
+
+<image src="https://github.com/anujkumar070/Projects_CSE/blob/master/Image%20Retrieval%20System%20Using%20Texture%2CColor%20and%20Edge/Images/output1.JPG" alt="output1">
+ <hr></hr>
+<image src="https://github.com/anujkumar070/Projects_CSE/blob/master/Image%20Retrieval%20System%20Using%20Texture%2CColor%20and%20Edge/Images/output2.JPG" alt="output2">
+ 
 
 
 
