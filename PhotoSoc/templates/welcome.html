@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'welcome.css')}}">
+ 	<link rel="stylesheet" type="text/css" href="../static/welcome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<style>
+               body{ background:linear-gradient(-45deg, #000000, #5b5b5c,  #000000,#404040);
+	            background-size: 400% 400%;
+	            animation: gradient 12s ease infinite;
+                }
+
+            @keyframes gradient {
+	        0% {
+		    background-position: 0% 50%;
+	        }
+	        50% {
+		    background-position: 100% 50%;
+	        }
+	        100% {
+		    background-position: 0% 50%;
+	        }
+            }
+        * {
+  box-sizing: border-box;
+}
+        .main{
+            background:linear-gradient(45deg, #5b5b5c,  #000000,#404040,#000000);
+	            background-size: 400% 400%;
+	            animation: gradient 12s ease infinite;
+        }
+            .photo {
+  position: absolute;
+  {#top: 86px;#}
+  right: 50px;
+  transform: scale(1);
+  transition: transform .5s;
+
+}
+
+.photo:hover {
+  transform: scale(3.5);
+
+    padding-top: 4%;
+
+
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="{{ url_for('posts',user=uid) }}">PhotoSoc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('welcome',user=uid) }}">PROFILE<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('create',user=uid) }}">CREATE POSTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={{ url_for('posts',user=uid) }}>POSTS</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('logout')}}">LOGOUT</a>
+      </li>
+              <li class="nav-item ">
+        <a class="nav-link" href="http://localhost/event/index.php?page=home">EVENTS</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="main" style="border-radius: 4px;border-color: #cccccc" >
+    <img src={{ file_url }} style="width:300px;height:400px;" alt="alternatetext">
+	<h1 class="name" style="color: #cccccc">Hi, {{name}}</h1><hr style="width: 30%">
+	<h3 class="email" style="color: #cccccc">{{email}}</h3>
+
+
+    <form method=post enctype=multipart/form-data>
+      <input style="color: #cccccc" type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+
+
+
+</div>
+<h1 style="color: #cccccc">Posts</h1>
+{% if files_list %}
+    <div class="card-columns">
+	{% for i in range(0,l) %}
+
+        <div class="card text-white  mb-3" style="max-width: 45rem; background-color: transparent;border-radius: 5px;border-color: #cccccc">
+        <a href="{{ file_url }}">
+
+  <div class="card-header" style="border-radius: 3px;border-color: #cccccc">
+      <div class="d-flex flex-row bd-highlight mb-3">
+          <div class="p-2  bd-highlight">
+              <p style="font-size: large;font-weight: bold">Uploaded by {{ name }}</p>
+
+          </div>
+          <div class="p-2 flex-grow-1 bd-highlight">
+                            <div class="photo" id="photo">
+                <img src="{{ file_url }}"  width="48" height="48"/>
+              </div>
+          </div>
+
+
+      </div>
+
+      </div>
+  </a>
+            <div class="card-body">
+    <h5 class="card-title">{{ caption[i] }}</h5>
+    <a href="{{ url_for('details',user=uid,key=key[i]) }}">
+    <img src="{{ files_list[i] }}" class="img-fluid" alt="Responsive image">
+    </a>
+             <a href="{{ url_for('delete',user=uid,key=key[i]) }}">   <button type="button" class="btn btn-danger">Delete</button></a>
+{#      {% for your_list_element in metadata[i] %}#}
+{#      <p>{{ your_list_element }} </p>#}
+{#  {% endfor %}#}
+  </div>
+</div>
+
+
+	{% endfor %}
+      </div>
+{% endif %}
+
+</body>
+</html>
