@@ -1,0 +1,4 @@
+#PhotoSoc
+<h1>PhotoSoc app allows users to post their photographs no matter what they are capturing but it should be captured with camera (phone, DSLR, Adobe Edit).The Image in the post get processed at backend and create a metadata containing all the details, settings, orientations, device Name, device specifications. The whole post with image, metadata, caption will be stored and get displayed on posts screen. The Image metadata will help other users to know what things and procedure they must follow to capture this particular photo. The user also can create Events to conduct workshops, competitions to spread awareness and knowledge. Overall photosoc help to gain knowledge in 
+photography and also for spreading awareness.</h1>
+<h3><a href="19BCB0030_VL2021220105210_PE003.pdf">The full report is available in repo</a></h3> 
