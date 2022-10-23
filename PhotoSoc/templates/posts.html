@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <style>
+           body{ background:linear-gradient(-45deg, #000000, #5b5b5c,  #000000,#404040);
+	            background-size: 400% 400%;
+	            animation: gradient 12s ease infinite;
+                }
+
+            @keyframes gradient {
+	        0% {
+		    background-position: 0% 50%;
+	        }
+	        50% {
+		    background-position: 100% 50%;
+	        }
+	        100% {
+		    background-position: 0% 50%;
+	        }
+            }
+        * {
+  box-sizing: border-box;
+}
+
+#myInput {
+
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+        .photo {
+  position: absolute;
+  {#top: 86px;#}
+  right: 50px;
+  transform: scale(1);
+  transition: transform .5s;
+
+}
+
+.photo:hover {
+  transform: scale(3.5);
+
+    padding-top: 4%;
+
+
+}
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+    </style>
+    <title>POSTS</title>
+
+</head>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="{{ url_for('posts',user=user) }}">PhotoSoc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('welcome',user=user) }}">PROFILE<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={{ url_for('create',user=user) }}>CREATE POSTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('posts',user=user) }}">POSTS</a>
+      </li>
+                <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('logout')}}">LOGOUT</a>
+      </li>
+                      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost/event/index.php?page=home">EVENTS</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<h1 style="color: #cccccc">Posts</h1>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Search</button>
+  <div id="myDropdown" class="dropdown-content">
+    <form method="POST">
+        <input type="text" class="live-search-box" placeholder="search here" id="tag" name="tag" />
+        <input type="submit" value="Go">
+
+<ul class="live-search-list" type="None">
+{% for t in tags %}
+    <li>{{ t }}</li>
+{% endfor %}
+</ul>
+    <script>
+                    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+    </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+
+$('.live-search-list li').each(function(){
+$(this).attr('data-search-term', $(this).text().toLowerCase());
+});
+
+$('.live-search-box').on('keyup', function(){
+
+var searchTerm = $(this).val().toLowerCase();
+
+    $('.live-search-list li').each(function(){
+
+        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+
+    });
+
+});
+
+});
+</script>
+
+
+
+    </form>
+  </div>
+</div>
+</header>
+<body>
+{% if files_list %}
+    <div class="card-columns">
+	{% for i in range(0,l) %}
+
+        <div class="card text-white  mb-3" style="max-width: 45rem; background-color: transparent;border-radius: 5px;border-color: #cccccc">
+        <a href="{{ user_profiles[i] }}">
+
+  <div class="card-header" style="border-radius: 3px;border-color: #cccccc">
+      <div class="d-flex flex-row bd-highlight mb-3">
+          <div class="p-2  bd-highlight">
+              <p style="font-size: large;font-weight: bold">Uploaded by {{ usernames[i] }}</p>
+
+          </div>
+          <div class="p-2 flex-grow-1 bd-highlight">
+                            <div class="photo" id="photo">
+                <img src="{{ user_profiles[i] }}"  width="48" height="48"/>
+              </div>
+          </div>
+
+
+      </div>
+
+      </div>
+  </a>
+            <div class="card-body">
+    <h5 class="card-title">{{ caption[i] }}</h5>
+    <a href="{{ url_for('details',user=user,key=key[i]) }}">
+    <img src="{{ files_list[i] }}" class="img-fluid" alt="Responsive image">
+    </a>
+{#      {% for your_list_element in metadata[i] %}#}
+{#      <p>{{ your_list_element }} </p>#}
+{#  {% endfor %}#}
+  </div>
+</div>
+
+
+	{% endfor %}
+      </div>
+{% endif %}
+
+</body>
+</html>

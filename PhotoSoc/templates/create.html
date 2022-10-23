@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Create Post Page</title>
+    <style>
+                       body{ background:linear-gradient(-45deg, #000000, #5b5b5c,  #000000,#404040);
+	            background-size: 400% 400%;
+	            animation: gradient 12s ease infinite;
+                }
+
+            @keyframes gradient {
+	        0% {
+		    background-position: 0% 50%;
+	        }
+	        50% {
+		    background-position: 100% 50%;
+	        }
+	        100% {
+		    background-position: 0% 50%;
+	        }
+            }
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="{{ url_for('posts',user=user) }}">PhotoSoc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('welcome',user=user) }}">PROFILE<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={{ url_for('create',user=user) }}>CREATE POSTS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('posts',user=user) }}">POSTS</a>
+      </li>
+                <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('logout')}}">LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<img src={{ file_url }} class="img-fluid" alt="Responsive image">
+{% for i in e %}
+            <small class="text-muted" style="color: #cccccc">
+
+            {{ i }}
+              <br>
+
+
+        </small>
+{% endfor %}
+    <form method="POST" enctype="multipart/form-data">
+        <input style="color: #cccccc" type=file name=file required>
+
+        <input style="color: #cccccc" type="text" id="caption" class="fadeIn second" name="caption" placeholder="Caption" >
+        <br>
+        <br>
+        <p style="color: #cccccc">write characteristic of images separated by commas</p>
+        <input  style="color: #cccccc" type="text" id="characteristic" class="fadeIn second" name="characteristic" placeholder="Characteristic" required>
+{#        <input type="email" id="login" class="fadeIn second" name="email" placeholder="email">#}
+        <input style="color: #cccccc" type=submit value=Upload required>
+</form>
+{% if success %}
+<br>
+<p>Upload Success!</p>
+{% endif %}
+
+</body>
+</html>
