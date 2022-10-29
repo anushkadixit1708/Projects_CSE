@@ -1,0 +1,152 @@
+.App {
+  text-align: center;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {
+  background: url("../src/assets/img1.jpg");
+} */
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+body {
+  background-image: url("../src/assets/img1.jpg");
+  background-size: 150%;
+}
+
+/* pokeDex.com */
+.pokeDex {
+  display: table;
+  max-width: 20em;
+  float: right;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.pokeDexCol {
+  display: table-row;
+}
+
+.pokeDexHeading {
+  background-color: rgb(220, 236, 131);
+  display: table-header-group;
+}
+
+.pokeDexItem,
+.pokeDexHead {
+  border: 2px solid #c380d2;
+  display: table-cell;
+  /* font-size: 5rem/; */
+  padding: 3px 10px;
+}
+
+.pokeDexHeading {
+  background-color: rgb(212, 224, 83);
+  display: table-header-group;
+  font-weight: bold;
+}
+
+.pokeDexFoot {
+  background-color: rgb(186, 242, 151);
+  display: table-footer-group;
+  font-weight: 600;
+}
+
+.pokeDexMain {
+  display: table-row-group;
+}
+
+.pokeDexItem:nth-child(odd) {
+  background-color: rgb(234, 184, 184);
+}
+
+.container {
+  display: flex;
+  width: 50%;
+  max-width: 500px;
+  align-items: center;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+
+  /* margin-left: 10rem; */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  background-color: rgb(197, 223, 219);
+  justify-content: center;
+}
+
+img {
+  height: 16em;
+  background: linear-gradient(to right, #fbdd7b 0%, #fba38b 50%, #f7dc83 100%);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 3px dotted rgb(182, 12, 12);
+}
+
+input {
+  box-sizing: border-box;
+  font-size: 2rem;
+  padding: 1rem;
+  display: block;
+  margin: 1rem auto 1rem auto;
+}
+
+.form input {
+  border-radius: 5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.form label {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  color: aliceblue;
+  background: linear-gradient(to right, #662700, #d96638);
+}
